@@ -4,7 +4,7 @@ services:
   web:
     container_name: web
     build: frontend
-    image: frontend_img:latest
+    image: frontend6:6.0.0
     networks:
       - object-detection
     ports:
@@ -17,7 +17,7 @@ services:
     container_name: yolo5
     networks:
       - object-detection
-    image: yolo569:latest
+    image: yolo56:6.0.0
     environment:
       - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
       - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
@@ -40,7 +40,7 @@ services:
 
   polybot:
     container_name: polybot
-    image: polybot6_img:latest
+    image: polybot6:6.0.0
     networks:
       - object-detection
     depends_on:
@@ -55,4 +55,5 @@ networks:
   object-detection:
     name: object-detection
     driver: bridge
+    
   
